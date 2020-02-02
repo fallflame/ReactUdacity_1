@@ -106,8 +106,21 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         <h2>Favorite Movies</h2>
+		{
+          profiles.map(profile => (
+          	<ProfileDisplay profile={profile}/>
+          ))
+        }
       </div>
     );
+  }
+}
+
+class ProfileDisplay extends Component {
+  render() {
+  	return <p>
+      {users[this.props.profile.userID].name}'s favorite movie is {movies[this.props.profile.favoriteMovieID].name}.
+    </p>
   }
 }
 
